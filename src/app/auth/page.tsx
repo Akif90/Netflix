@@ -2,11 +2,14 @@
 import Input from "@/components/Input";
 import axios from "axios";
 import React, {useState, useCallback} from "react";
-import {signIn} from "next-auth/react";
+import {signIn, useSession} from "next-auth/react";
 import {FcGoogle} from "react-icons/fc";
 import {FaGithub} from "react-icons/fa";
+import {redirect} from "next/navigation";
 
 const Auth = () => {
+  const {data: session, status} = useSession();
+  if (session) redirect("/");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
