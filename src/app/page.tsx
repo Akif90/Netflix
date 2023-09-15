@@ -8,6 +8,8 @@ import BillBoard from "@/components/BillBoard";
 import MovieList from "@/components/MovieList";
 import useMovieList from "@/hooks/useMovieList";
 import useFavourite from "@/hooks/useFavourite";
+import InfoModal from "@/components/InfoModal";
+import useInfoModal from "@/hooks/useInfoModal";
 
 export default function Home() {
   const {data: session} = useSession({
@@ -16,10 +18,12 @@ export default function Home() {
       redirect("/auth");
     },
   });
+  const {isOpen, closeModal} = useInfoModal();
   const {data: movies = []} = useMovieList();
   const {data: favourites = []} = useFavourite();
   return (
     <>
+      <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <BillBoard />
       <div className="pb-40">
