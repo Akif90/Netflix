@@ -1,6 +1,7 @@
 import useBillBoard from "@/hooks/useBillBoard";
 import React from "react";
 import {AiOutlineInfoCircle} from "react-icons/ai";
+import PlayButton from "./PlayButton";
 const BillBoard = () => {
   const {data} = useBillBoard();
   return (
@@ -21,6 +22,7 @@ const BillBoard = () => {
           {data?.description}
         </p>
         <div className="flex flex-row items-center mt-3 md:mt-4 gap-3 ">
+          <PlayButton movieId={data?.id} />
           <button
             className="text-white bg-white rounded-md bg-opacity-30 py-1
            md:py-2 px-2 md:px-4 w-auto
