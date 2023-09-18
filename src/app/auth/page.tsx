@@ -61,7 +61,7 @@ const Auth = () => {
                   label="Username"
                   id="username"
                   onChange={(e: any) => {
-                    setEmail(e.target.value);
+                    setName(e.target.value);
                   }}
                   type="text"
                   value={name}

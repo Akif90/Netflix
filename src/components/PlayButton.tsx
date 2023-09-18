@@ -27,7 +27,7 @@ const PlayButton: React.FC<PlayButtonProps> = ({movieId}) => {
 
   "
     >
-      <BsFillPlayFill size={25} classname="mr-1" />
+      <BsFillPlayFill size={25} className="mr-1" />
     </button>
   );
 };
